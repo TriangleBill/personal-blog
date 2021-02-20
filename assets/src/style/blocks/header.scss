@@ -1,0 +1,294 @@
+.header {
+  display: flex;
+  width: calc(100% - 300px);
+
+  background-color: #0D0D0D;
+  box-shadow: 0 5px 25px rgba($black, .25);
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+
+  @include breakpoint($tablet-bp) {
+    width: 100%;
+  }
+}
+
+.header_left {
+  width: 60%;
+
+  @include breakpoint($tablet-bp) {
+    width: 40%;
+  }
+}
+
+.header_right {
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+
+  @include breakpoint($tablet-bp) {
+    width: 60%;
+  }
+}
+
+.nav {
+  &--mobile {
+    display: none;
+  }
+
+  @include breakpoint($tablet-bp) {
+    display: none;
+
+    &--mobile {
+      display: block;
+    }
+  }
+}
+
+.nav_list {
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  @include breakpoint($tablet-bp) {
+    flex-direction: column;
+  }
+}
+
+.nav_item {
+  position: relative;
+
+  &:hover {
+    .nav_link{
+      background-color: $blue;
+    }
+
+    > .subnav {
+      display: block;
+    }
+  }
+
+  @include breakpoint($tablet-bp) {
+    &:hover {
+      .nav_link {
+        background: none;
+      }
+    }
+  }
+}
+
+.nav_link {
+  display: block;
+  padding: 1.35rem 1rem;
+  
+  font-size: 1.1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $white;
+  text-decoration: none;
+  transition: background-color .2s linear;
+
+  &:hover {
+    background-color: $blue;
+    text-decoration: none;
+    color: $white;
+  }
+
+  &.has_subnav {
+    position: relative;
+    padding-right: 3.5rem;
+
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 1.35rem;
+      transform: translateY(-50%);
+
+      border-style: solid;
+      border-width: 6px 5px 0 5px;
+      border-color: $white transparent transparent transparent;
+    }
+  }
+
+  @include breakpoint($tablet-bp) {
+    padding-left: 0;
+    padding-right: 0;
+
+    text-transform: none;
+    font-size: 1.6rem;
+    font-weight: 300;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.subnav {
+  display: none;
+  width: 16.5rem;
+  background-color: $blue;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 6px 8px rgba($black, .2);
+
+  position: absolute;
+  padding: .5rem 0;
+  top: 100%;
+  left: 0;
+
+  @include breakpoint($tablet-bp) {
+    position: static;
+    width: 100%;
+    padding-left: 2rem;
+
+    background-color: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.subnav_link {
+  display: block;
+  padding: .45rem 1.2rem;
+  font-size: 1.2rem;
+  color: $white;
+  text-decoration: none;
+
+  transition: background-color .2s ease-in-out;
+
+  &:hover {
+    background-color: darken($blue, 5%);
+  }
+
+  @include breakpoint($tablet-bp) {
+    padding-left: 0;
+    padding-right: 0;
+
+    text-transform: none;
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    &:hover {
+      background: none;
+    }
+  }
+}
+
+.burger {
+  display: none;
+  width: 3rem;
+  height: 2rem;
+  padding: 0;
+
+  background: none;
+  border: none;
+
+  font-size: 0;
+  color: transparent;
+
+  position: absolute;
+  top: 50%;
+  left: 1.5rem;
+
+  transform: translateY(-50%);
+
+  &:before,
+  &:after,
+  span {
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: $white;
+
+    position: absolute;
+    left: 0;
+  }
+
+  &:before,
+  &:after {
+    content: "";
+
+    transition: transform linear .2s;
+  }
+
+  &:before {
+    top: 0;
+  }
+
+  &:after {
+    bottom: 0;
+  }
+
+  span {
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity linear .2s;
+  }
+
+  .show-sidebar & {
+    span {
+      opacity: 0;
+    }
+
+    &:before,
+    &:after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  @include breakpoint($tablet-bp) {
+    display: block;
+  }
+}
+
+.search {
+  max-width: 21rem;
+  width: 100%;
+  background-color: $primary;
+}
+
+.search_input {
+  display: block;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: $white;
+
+  &::placeholder {
+    color: rgba($white, .4);
+  }
+
+  &:focus {
+    border: none;
+  }
+
+  @include breakpoint($table-bg) {
+    height: 4rem;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+}

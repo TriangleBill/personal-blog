@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    //= template/head.html
+    <title>Текстовая страница</title>
+</head>
+<body >
+<div class="main" id="page">
+    <div class="container">
+
+        <article class="post">
+            <div class="post_actions">
+                <a href="index.html">вурнуться назад</a>
+                <a class="d-flex align-items-center" href="#">
+                    поделиться <img class="ml-2" src="img/post/share.svg" alt="поделиться">
+                </a>
+            </div>
+
+            <div class="post_header">
+                <h2 class="post_title mb-0">Как писать код быстро и безболезненно?</h2>
+            </div>
+
+            <div class="post_content">
+                <div class="post_text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam debitis in libero magnam
+                        nam nobis nostrum quisquam repellendus unde veniam. Aliquid asperiores dicta ducimus, iusto mollitia porro possimus voluptatem voluptatibus.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam debitis in libero magnam
+                        nam nobis nostrum quisquam repellendus unde veniam. Aliquid asperiores dicta ducimus, iusto mollitia porro possimus voluptatem voluptatibus.</p>
+
+                    <p>
+                        <img src="img/post/image.jpg" alt="">
+                    </p>
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus asperiores autem beatae blanditiis commodi corporis, deleniti est, facere fugit id ipsa molestiae nemo obcaecati perspiciatis qui recusandae rem, sapiente velit?</p>
+                </div><!-- /.post_text -->
+
+                <!-- Comments -->
+                <div class="mt-5">
+                    <h3 class="post_subtitle">Обсуждение</h3>
+
+                    <form class="form" action="/" method="post">
+                        <div class="form_group">
+                                <textarea class="form_control form_control--textarea" name="comment-text"
+                                          placeholder="Текст комментария"></textarea>
+                            <span class="form_line"></span>
+                        </div>
+                        <btm class="btn btn--blue btn--rounded btn--sm" type="submit">Отправить</btm>
+                    </form>
+                </div>
+
+                <ul class="comments">
+                    <li class="comments-item">
+                        <div class="comments_header">
+                            <img class="comments_avatar" src="https://download-cs.net/steam/avatars/3434.jpg" alt="">
+                            <div class="comments_author">
+                                <div class="comments_name">Дмитрий Валак</div>
+                                <time class="comments_pubdate" datetime="2020-12-22 19:21">1 неделю назад</time>
+                            </div>
+                        </div>
+                        <div class="comments_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et exercitationem inventore ipsa mollitia necessitatibus nihil odit pariatur porro ullam voluptate? Aperiam assumenda culpa deleniti ducimus eveniet, maiores minima minus quisquam!</div>
+                        <button class="comments_reply" type="button">ответить</button>
+
+                        <ul class="comments">
+                            <li class="comments-item">
+                                <div class="comments_header">
+                                    <img class="comments_avatar" src="https://download-cs.net/steam/avatars/3434.jpg" alt="">
+                                    <div class="comments_author">
+                                        <div class="comments_name">Дмитрий Валак</div>
+                                        <time class="comments_pubdate" datetime="2020-12-22 19:21">1 неделю назад</time>
+                                    </div>
+                                </div>
+                                <div class="comments_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et exercitationem inventore ipsa mollitia necessitatibus nihil odit pariatur porro ullam voluptate? Aperiam assumenda culpa deleniti ducimus eveniet, maiores minima minus quisquam!</div>
+                                <button class="comments_reply" type="button">ответить</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div> <!-- /.post_content -->
+        </article><!-- /.post -->
+
+    </div>
+</div>
+
+//= template/default.html
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+.comments {
+  margin-top: 5rem;
+}
+
+.comments-item {
+  margin-bottom: 3rem;
+
+  > .comments {
+    margin-top: 3rem;
+    margin-left: 3rem;
+
+    @include breakpoint($mobile-bp) {
+      margin-left: 1.5rem;
+    }
+  }
+}
+
+.comments_header {
+  display: flex;
+}
+
+.comments_avatar {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.comments_author {
+  padding-left: 1.5rem;
+  flex-grow: 1;
+
+  font-size: 1.2rem;
+}
+
+.comments_name {
+  color: $white;
+  font-weight: 500;
+}
+
+.comments_pubdate {
+  color: #757575;
+}
+
+.comments_text {
+  margin-bottom: 1.5rem;
+
+  font-size: 1.2rem;
+  color: $white;
+  line-height: 1.3;
+}
+
+.comments_reply {
+  padding: 0;
+
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+  color: $blue;
+
+  &:hover {
+    text-decoration: underline ;
+  }
+}
+

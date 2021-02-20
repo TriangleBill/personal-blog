@@ -1,0 +1,78 @@
+.form {
+
+  &--auth {
+    max-width: 21rem;
+    margin: 0 auto;
+  }
+}
+
+.form_group {
+  margin-bottom: 1.5rem;
+  position: relative;
+
+  &--md {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.form_line {
+  width: 0;
+  height: 1px;
+
+  background-color: $blue;
+
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+
+  transition: width 0.2s linear;
+}
+
+.form_control {
+  display: block;
+  width: 100%;
+  padding: .5rem 0 .75rem;
+  overflow: hidden;
+
+  background: none;
+  border-bottom: 1px solid #3F3F3F;
+  border-radius: 0;
+  box-shadow: none;
+
+  font-family: inherit;
+  font-size: 1.4rem;
+  color: $white;
+
+  &--textarea {
+    height: 3rem;
+    resize: none;
+  }
+
+  &::placeholder {
+    color: rgba($white, .2);
+  }
+
+  &:focus + .form_line {
+    width: 100%;
+  }
+}
+
+.form_footer {
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.form_footer_list {
+  display: flex;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  line-height: 1.2;
+
+  li {
+    margin: 0 .5rem;
+  }
+}

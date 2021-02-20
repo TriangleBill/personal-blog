@@ -1,0 +1,84 @@
+.add-post {
+  margin-bottom: 3rem;
+  padding: 1.5rem 2rem;
+
+  background-color: $secondary;
+  box-shadow: 0 15px 25px rgba($black, .45);
+  border-radius: 5px;
+
+  @include breakpoint($mobile-bp) {
+    padding: 1.5rem;
+  }
+}
+
+.add-post_form {
+  display: flex;
+  align-items: center;
+}
+
+.add-post_textarea {
+  display: block;
+  flex-grow: 1;
+  height: 26px;
+  overflow: hidden;
+
+  outline: none;
+  border: none;
+  background: transparent;
+  resize: none;
+
+  font-size: 1.5rem;
+  color: $white;
+  font-family: inherit;
+
+  &::placeholder {
+    color: #d2d2d2;
+  }
+}
+
+.add-post_form-action {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.add-post_file,
+.add-post_send{
+  display: block;
+  cursor: pointer;
+
+  margin-right: .5rem;
+  margin-bottom: 0;
+
+  width: 4.4rem;
+  height: 4.4rem;
+
+  @include breakpoint($mobile-bp) {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}
+
+.add-post_file {
+  border: none;
+  border-radius: 50%;
+  background:#EBEBEB url("../../img/add-post/file_btn.svg") center no-repeat;
+
+  input {
+    display: none;
+  }
+
+  @include breakpoint($mobile-bp) {
+    background-size: 18px;
+  }
+}
+
+.add-post_send {
+  border: none;
+  border-radius: 50%;
+  background: $blue url("../../img/add-post/send-btn.svg") center no-repeat;
+
+  @include breakpoint($mobile-bp) {
+    background-size: 15px;
+  }
+}

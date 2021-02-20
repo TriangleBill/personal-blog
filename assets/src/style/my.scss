@@ -1,0 +1,132 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  background-color: #181818;
+  font-size: 1.4rem;
+  color: $white;
+  line-height: 1.5;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+
+
+  @include breakpoint($tablet-bp) {
+    &.show-sidebar {
+      overflow: hidden;
+    }
+  }
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none; /* Убираем маркеры */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+    text-decoration: underline;
+  }
+}
+
+//Убирать рамки
+input,
+textarea,
+table,
+button {
+  border: none;
+  outline: none;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+.container {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 5rem 0;
+
+  @include breakpoint($mobile-bp) {
+    padding: 0 1.5rem;
+  }
+}
+
+.page_title {
+  font-size: 2.1rem;
+  color: $white;
+  margin-bottom: 3rem;
+
+  &--center {
+    text-align: center;
+  }
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: top;
+  padding: 1.13em 2.1em;
+
+  background: $secondary;
+  border: none;
+  cursor: pointer;
+  border-radius: 3em;
+
+  font-family: inherit;
+  font-size: 1.2rem;
+  line-height: 1.1;
+  font-weight: 500;
+  color: $white;
+  text-decoration: none;
+
+  transition: background-color linear .2s;
+
+  &:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  &--red {
+    background-color: $red;
+    box-shadow: 0 7px 17px rgba(#F23F3F, .20);
+
+    &:hover,
+    &:focus {
+      background-color: darken($red, 5%);
+    }
+  }
+
+  &--blue {
+    background-color: $blue;
+    box-shadow: 0 7px 17px rgba(#2054DB, .35);
+
+    &:hover,
+    &:focus {
+      background-color: darken($blue, 5%);
+    }
+  }
+
+  &--rounded {
+    border-radius: 0.41em;
+  }
+
+  &--sm {
+    padding: 0.7rem 1.25rem;
+  }
+}

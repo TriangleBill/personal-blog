@@ -1,0 +1,37 @@
+.cabinet {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cabinet_form {
+  width: 56%;
+
+  @include breakpoint($mobile-bp) {
+    width: 100%;
+  }
+}
+
+.cabinet_avatar {
+  align-self: center;
+  
+  img  {
+    display: block;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.cabinet_file {
+  font-size: 1.4rem;
+  color: $blue;
+  text-decoration: underline;
+  cursor: pointer;
+
+  input {
+    display: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
